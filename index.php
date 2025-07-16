@@ -1,5 +1,5 @@
 <?php 
-    require_once './controller/AlumnoController.php';
+    require_once './controller/AlojamientoController.php';
     $controller = new AlojamientoController();
 
     $action = isset($_GET['action']) ? $_GET['action'] : 'read';
