@@ -1,44 +1,45 @@
 <?php 
 
-    class Alojamiento{ 
-        public $id;
-        public $imagen;
-        public $titulo;
-        public $precio;
-        public $alojamiento;
-        public $disponibilidad;
-        public $calificacion;
-        public $connection;
-        public $table_name = "alojamientos";
+class Alojamiento{
+    public $id;
+    public $img;
+    public $titulo;
+    public $precio;
+    public $alojamiento;
+    public $disponibilidad;
+    public $calificacion;
+    public $Lugar;
+    public $connection;
+    public $table_name = "alojamientos";
 
-        public function __construct($db)
+     public function __construct($db)
         {
             $this->connection = $db;
         }
 
         public function read(){
-            //Logica para leer los alojamientos
-            $query = "SELECT * FROM {$this->table_name}";
+            //Logica para leer los alumnos
+            $query = "SELECT * FROM {$this->table_name} LIMIT 6";
             $sentence = $this->connection->prepare($query);
             $sentence->execute();
             return $sentence;
         }
 
-        public function selecionar(){
-           //Logica para seleccionar un alojamiento
+        public function search($titulo){
+    $query = "SELECT * FROM {$this->table_name} WHERE titulo = :titulo";
+    $sentence = $this->connection->prepare($query);
+    $sentence->bindParam(':titulo', $titulo);
+    $sentence->execute();
+    return $sentence;
+}
 
-        }
-
-        public function update(){
-            //Logica para actualizar un alumno
-
-        }
-
-
-        public function delete($id){
-            //Logica para eliminar un alumno
-
-        }
-    }
+public function searchLugar($lugar){
+    $query = "SELECT * FROM {$this->table_name} WHERE lugar = :lugar";
+    $sentence = $this->connection->prepare($query);
+    $sentence->bindParam(':lugar', $lugar);
+    $sentence->execute();
+    return $sentence;
+}
+}
 
 ?>
