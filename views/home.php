@@ -23,7 +23,7 @@
 <header class="sticky-top">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a href="index.php" class="navbar-brand">ExtraVago</a>
+    <a href="home.php" class="navbar-brand">ExtraVago</a>
     <div class="w-100 d-flex justify-content-center">
       <form class="row g-2 align-items-end justify-content-center mx-auto" method="POST" action="./index.php?action=search" style="max-width: 500px; width: 100%;">
         <div class="col-9">
@@ -42,7 +42,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          <a class="nav-link active" aria-current="page" href="home.php">Inicio</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Nosotros</a>
@@ -52,6 +52,12 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../session/register.php">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../session/login.php">LogIn</a>
         </li>
       </ul>
     </div>

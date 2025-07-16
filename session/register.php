@@ -50,9 +50,43 @@
   <title>Formulario Registro</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="bg-light d-flex justify-content-center align-items-center" style="height: 100vh;">
+<body class="bg-light " style="height: 100vh;">
 
-  <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
+<div>
+<header class="sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a href="home.php" class="navbar-brand">ExtraVago</a>
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Servicios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../session/register.php">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../session/login.php">LogIn</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+</div>
+
+<div class="d-flex justify-content-center align-items-center mt-5">
+  <div class="card shadow p-4 " style="width: 100%; max-width: 400px;">
     <h2 class="text-center mb-4">Regístrate</h2>
 
     <form action="register.php" method="post">
@@ -88,15 +122,19 @@
       <div class="d-grid col-4 offset-md-4">
         <button type="submit" class="btn btn-primary">Registrarse</button>
       </div>
+
+      <div style="color: gray;">
+        <br><?php echo $msg;?> 
+      </div>
+
       <p class="mt-2">
         <a href="login.php" class="text-center"> Ya tengo una cuenta </a>
       </p>
         </div>
     </form>
-      <div style="color: gray;">
-        <br><?php echo $msg;?> <br>
-      </div>
+      
   </div>
+</div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

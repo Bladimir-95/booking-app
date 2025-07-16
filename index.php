@@ -13,9 +13,6 @@
         case 'create':
             $controller->create();
             break;
-        case 'update':
-            $controller->update($id);
-            break;
         case 'delete':
             $controller->delete($id);
             break;
