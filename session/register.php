@@ -2,12 +2,13 @@
   $msg="";
   $name="";
 
-  if(isset($_POST['name'], $_POST['email'], $_POST['password'], $_POST['retype_password'])){
+  if(isset($_POST['name'], $_POST['email'], $_POST['password'], $_POST['retype_password'], $_POST['rol'])){
 
     $name = strip_tags($_POST['name']);
     $email = strip_tags($_POST['email']);
     $password = strip_tags($_POST['password']);
     $retype_password = strip_tags($_POST['retype_password']);
+    $rol = $_POST['rol'];
 
     if($password != $retype_password){
       $msg.= "Las contraseñas no coinciden <br>";
@@ -29,7 +30,7 @@
 
       if($cantidad == 0){
         $password = sha1($password);
-        $mysqli->query("INSERT INTO `usuarios` (`name`, `email`, `password`) VALUE ('".$name."', '".$email."', '".$password."')");
+        $mysqli->query("INSERT INTO `usuarios` (`name`, `email`, `password`, `rol`) VALUE ('".$name."', '".$email."', '".$password."', '".$rol."')");
         $msg .= "Usuario creado correctamente, ingrese haciendo <a href='login.php'>clic aquí</a> <br>";
       }else{
         $msg .= "El mail ingresado ya existe <br>";
@@ -64,15 +65,6 @@
           <a class="nav-link active" aria-current="page" href="#">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Servicios</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contacto</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="../session/register.php">Register</a>
         </li>
         <li class="nav-item">
@@ -92,27 +84,27 @@
     <form action="register.php" method="post">
       <div class="mb-3">
         <label for="nombre" class="form-label">Nombre completo</label>
-        <input name="name" type="text" class="form-control" id="nombre" placeholder="Tu nombre completo" value="<?php echo $name; ?>" required >
+        <input name="name" type="text" class="form-control" placeholder="Tu nombre completo" value="<?php echo $name; ?>" required >
       </div>
 
       <div class="mb-3">
         <label for="correo" class="form-label">Correo electrónico</label>
-        <input name="email" type="email" class="form-control" id="correo" placeholder="Ingresa tu correo" required>
+        <input name="email" type="email" class="form-control" placeholder="Ingresa tu correo" required>
       </div>
 
       <div class="mb-3">
         <label for="contrasenia" class="form-label">Contraseña</label>
-        <input name="password" type="password" class="form-control" id="contrasenia" placeholder="********" required>
+        <input name="password" type="password" class="form-control" placeholder="********" required>
       </div>
 
       <div class="mb-3">
         <label for="repetirContrasenia" class="form-label">Repetir contraseña</label>
-        <input name="retype_password" type="password" class="form-control" id="repetirContrasenia" placeholder="********" required>
+        <input name="retype_password" type="password" class="form-control" placeholder="********" required>
       </div>
 
       <div class="mb-3">
-        <label for="tipoUsuario" class="form-label">Tipo de usuario</label>
-        <select class="form-select" id="tipoUsuario" required>
+        <label for="rol" class="form-label">Tipo de usuario</label>
+        <select class="form-select" name="rol" required>
           <option value="" disabled selected>Selecciona una opción</option>
           <option value="normal">Usuario</option>
           <option value="admin">Administrador</option>

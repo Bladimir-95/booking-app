@@ -40,12 +40,12 @@ if(isset($_POST['email'], $_POST['password'])){
 
       $_SESSION['autorizado'] = true; 
 
-    if($_SESSION['role'] == 'admin'){
+    if($_SESSION['rol'] == 'admin'){
         
-        echo '<meta http-equiv="refresh" content="2; url=" />';
+        header("Location: ../models/admin.php");
       } else {
-        
-        echo '<meta http-equiv="refresh" content="2; url=" />';
+        $_SESSION['user_id'] = $usuarios[0]['id'];
+        header("Location: ../views/cuenta.php");
       }
     } else {
       $msg .= "Acceso denegado!";
@@ -80,15 +80,6 @@ if(isset($_POST['email'], $_POST['password'])){
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="home.php">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Servicios</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contacto</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../session/register.php">Register</a>

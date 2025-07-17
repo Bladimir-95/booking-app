@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +28,7 @@
 <header class="sticky-top">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a href="home.php" class="navbar-brand">ExtraVago</a>
+    <a href="index.php" class="navbar-brand">ExtraVago</a>
     <div class="w-100 d-flex justify-content-center">
       <form class="row g-2 align-items-end justify-content-center mx-auto" method="POST" action="./index.php?action=search" style="max-width: 500px; width: 100%;">
         <div class="col-9">
@@ -43,6 +48,15 @@
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="home.php">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Servicios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contacto</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../session/register.php">Register</a>
@@ -119,21 +133,29 @@ hasta que no se precione el boton con info no se vea.-->
 
   <ul class="list-unstyled row g-4">
     <?php foreach($alojaminetos as $alojamiento): ?>
-      
-      <li class="col-md-4">
-        <div class="card h-100">
-          <img src="<?php echo htmlspecialchars($alojamiento['imagen']); ?>" class="card-img-top" alt="Imagen de <?php echo htmlspecialchars($alojamiento['titulo']); ?>">
-          <div class="card-body">
-            <h5 class="card-title"><?php echo htmlspecialchars($alojamiento['titulo']); ?></h5>
-            <p class="card-text mb-1"><strong>Precio:</strong> <?php echo htmlspecialchars($alojamiento['precio']); ?></p>
-            <p class="card-text mb-1"><strong>Alojamiento:</strong> <?php echo htmlspecialchars($alojamiento['alojamiento']); ?></p>
-            <p class="card-text mb-1"><strong>Disponibilidad:</strong> <?php echo htmlspecialchars($alojamiento['disponibilidad']); ?></p>
-            <p class="card-text mb-1"><strong>Lugar:</strong> <?php echo htmlspecialchars($alojamiento['lugar']); ?></p>
-            <p class="card-text mb-1"><strong>Calificación:</strong> <?php echo htmlspecialchars($alojamiento['calificacion']); ?>⭐ </p>
-          </div>
-        </div>
-      </li>
-    <?php endforeach; ?>
+  <li class="col-md-4">
+    <div class="card h-100">
+      <img src="<?php echo htmlspecialchars($alojamiento['imagen']); ?>" class="card-img-top" alt="Imagen de <?php echo htmlspecialchars($alojamiento['titulo']); ?>">
+      <div class="card-body">
+        <h5 class="card-title"><?php echo htmlspecialchars($alojamiento['titulo']); ?></h5>
+        <p class="card-text mb-1"><strong>Precio:</strong> <?php echo htmlspecialchars($alojamiento['precio']); ?></p>
+        <p class="card-text mb-1"><strong>Alojamiento:</strong> <?php echo htmlspecialchars($alojamiento['alojamiento']); ?></p>
+        <p class="card-text mb-1"><strong>Disponibilidad:</strong> <?php echo htmlspecialchars($alojamiento['disponibilidad']); ?></p>
+        <p class="card-text mb-1"><strong>Lugar:</strong> <?php echo htmlspecialchars($alojamiento['lugar']); ?></p>
+        <p class="card-text mb-1"><strong>Calificación:</strong> <?php echo htmlspecialchars($alojamiento['calificacion']); ?>⭐ </p>
+        
+        <?php if (isset($_SESSION['user_id'])): ?>
+          <!-- Formulario para agregar alojamiento solo si el usuario está logueado -->
+          <form action="./models/Agregar_alojamiento_cuenta.php" method="POST">
+            <input type="hidden" name="alojamiento_id" value="<?php echo $alojamiento['id']; ?>">
+            <button type="submit" class="btn btn-primary mt-2">Agregar a mi cuenta</button>
+          </form>
+        <?php endif; ?>
+        
+      </div>
+    </div>
+  </li>
+<?php endforeach; ?>
   </ul>
 </div>
 </main>
