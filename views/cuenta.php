@@ -6,6 +6,7 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: ../session/login.php");
     exit();
 }
+    
 
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../models/Alojamientos_usuarios.php';
@@ -59,7 +60,7 @@ $alojamientos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
             <p>No tienes alojamientos guardados aún.</p>
         <?php endif; ?>
 
-        <a href="index.php" class="btn btn-primary mt-3">Volver a Inicio</a>
+        <a href="home.php" class="btn btn-primary mt-3">Volver a Inicio</a>
     </div>
 </body>
 </html>

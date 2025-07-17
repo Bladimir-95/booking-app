@@ -50,13 +50,13 @@ session_start();
           <a class="nav-link active" aria-current="page" href="#">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./login.php">login</a>
+          <a class="nav-link" href="../session/login.php">login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./register.php">Registrarse</a>
+          <a class="nav-link" href="../session/register.php">Registrarse</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./cuenta.php">Cuenta</a>
+          <a class="nav-link" href="cuenta.php">Cuenta</a>
         </li>
       </ul>
     </div>
