@@ -45,19 +45,13 @@
           <a class="nav-link active" aria-current="page" href="home.php">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Servicios</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contacto</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="../session/register.php">Register</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../session/login.php">LogIn</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cuenta.php">Cuenta</a>
         </li>
       </ul>
     </div>
