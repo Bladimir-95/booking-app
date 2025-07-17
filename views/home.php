@@ -47,7 +47,7 @@ session_start();
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          <a class="nav-link active" aria-current="page" href="home.php">Inicio</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../session/login.php">login</a>

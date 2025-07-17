@@ -38,6 +38,30 @@ $alojamientos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
+<header class="sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a href="home.php" class="navbar-brand">ExtraVago</a>
+  </div>
+       
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="home.php">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../session/register.php">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../session/login.php">LogIn</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+
     <div class="container py-4">
         <h2>Alojamientos guardados en tu cuenta</h2>
 
