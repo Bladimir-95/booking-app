@@ -3,7 +3,7 @@ session_start();
 
 // si el usuario no esta logiado lo mando para el lobby
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: ../session/login.php");
     exit();
 }
 
