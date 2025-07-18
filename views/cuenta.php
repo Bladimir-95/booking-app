@@ -42,13 +42,13 @@ $alojamientos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 <header class="sticky-top">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a href="home.php" class="navbar-brand">ExtraVago</a>
+    <a href="../index.php" class="navbar-brand">ExtraVago</a>
   </div>
        
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="home.php">Inicio</a>
+          <a class="nav-link active" aria-current="page" href="../index.php">Inicio</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../session/register.php">Register</a>
@@ -69,9 +69,9 @@ $alojamientos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
             <ul class="list-group">
                 <?php foreach ($alojamientos as $alojamiento): ?>
                     <li class="list-group-item">
-                        <h5><?= htmlspecialchars($alojamiento['titulo']) ?></h5>
-                        <p>Precio: <?= htmlspecialchars($alojamiento['precio']) ?></p>
-                        <p>Lugar: <?= htmlspecialchars($alojamiento['lugar']) ?></p>
+                        <h5><?= $alojamiento['titulo'] ?></h5>
+                        <p>Precio: <?= $alojamiento['precio'] ?></p>
+                        <p>Lugar: <?= $alojamiento['lugar'] ?></p>
                         <form method="POST" style="margin:0;">
                              <input type="hidden" name="eliminar_alojamiento_id" value="<?= $alojamiento['id'] ?>">
                              <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
@@ -84,7 +84,7 @@ $alojamientos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
             <p>No tienes alojamientos guardados aún.</p>
         <?php endif; ?>
 
-        <a href="home.php" class="btn btn-primary mt-3">Volver a Inicio</a>
+        <a href="../index.php" class="btn btn-primary mt-3">Volver a Inicio</a>
     </div>
 </body>
 </html>

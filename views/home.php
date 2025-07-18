@@ -59,13 +59,13 @@ session_start();
           <a class="nav-link" href="#">Contacto</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../session/register.php">Register</a>
+          <a class="nav-link" href="/MVC/booking-app/session/register.php">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../session/login.php">LogIn</a>
+          <a class="nav-link" href="/MVC/booking-app/session/login.php">LogIn</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="cuenta.php">Cuenta</a>
+          <a class="nav-link" href="./views/cuenta.php">Cuenta</a>
         </li>
       </ul>
     </div>

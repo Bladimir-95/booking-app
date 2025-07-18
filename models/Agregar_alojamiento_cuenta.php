@@ -20,7 +20,7 @@ if (isset($_POST['alojamiento_id'])) {
     $alojamientosUsuarios = new Alojamientos_usuarios($db);
     $alojamientosUsuarios->agregarAlojamiento($user_id, $alojamiento_id);
 
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit();
 } else {
     echo "Error: no se recibió el ID del alojamiento.";
